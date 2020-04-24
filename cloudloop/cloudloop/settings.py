@@ -25,7 +25,7 @@ SECRET_KEY = 'c@(b!djv%318yf2+uwmdr(eare3^%%ievx+*&-n2347yzgcp81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','cloudloop.io']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'cloudloop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cloudloop',
+        'USER': 'django',
+        'PASSWORD': '616f8ea8d0b5ef3cadde8ac9032b28f1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

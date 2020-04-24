@@ -1,3 +1,5 @@
+psutil>=5.6.1
+gevent>=1.4
 wheel
 django>=3.0.5
 psycopg2>=2.8.5
