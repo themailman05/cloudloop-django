@@ -1,23 +1,29 @@
-# Cloudloop
+#Cloudloop
 
-### Create Database
+###Create Database
+
 We are going to use postgresql
+createdb cloudloop
+createuser -P
 
-docker build -t postgres - < Dockerfile.postgres
-docker run -p5432:5432 -e POSTGRES_PASSWORD=cloudloop postgres
+###Install postgres dev headers to build psycopg2 and nginx
 
-### Install postgres dev headers to build psycopg2 and nginx
 sudo apt update && sudo apt install libpq-dev nginx
 
-### Create VirtualEnv
+###Create VirtualEnv
+
 python3 -m venv env
 source env/bin/activate
 
-### Install requirements
+###Install requirements
+
 pip install -r requirements.txt
 
-### Run Migrations
+###Run Migrations
+
 python3 manage.py migrate
 
-### Run Server
+###Run Server
+
 python3 manage.py runserver
+
