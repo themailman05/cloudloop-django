@@ -1,3 +1,5 @@
+djangorestframework
+channels
 psutil>=5.6.1
 gevent>=1.4
 wheel
