@@ -5,5 +5,5 @@ from userauth import views
 urlpatterns = [
     path('login',views.auth_login),
     path('logout',views.auth_logout),
-    path('register',views.signup),
+    path('register',views.register),
 ]

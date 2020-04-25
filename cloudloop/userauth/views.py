@@ -2,6 +2,7 @@ import json
 
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
 from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
 
@@ -10,7 +11,7 @@ from rest_framework import status
 from . import serializers
 from . import models
 
-
+@require_http_methods(["POST"])
 @csrf_exempt
 def auth_login(request):
     """Client attempts to login
@@ -28,6 +29,7 @@ def auth_login(request):
         return JsonResponse(serializer.data)
     return HttpResponse(status=401)
 
+@require_http_methods(["POST"])
 @csrf_exempt
 def register(request):
     """Client attempts to sign up
@@ -44,7 +46,7 @@ def register(request):
         serializer = serializers.UserSerializer(u)
         return JsonResponse(serializer.data)
 
-
+@require_http_methods(["POST"])
 def auth_logout(request):
     """Clears the session"""
     logout(request)
