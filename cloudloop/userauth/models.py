@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from realtimechatserver import helper
+from cloudloop import helper
 
 # Create your models here.
 
