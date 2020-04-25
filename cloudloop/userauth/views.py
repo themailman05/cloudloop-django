@@ -47,6 +47,7 @@ def register(request):
         return JsonResponse(serializer.data)
 
 @require_http_methods(["POST"])
+@csrf_exempt
 def auth_logout(request):
     """Clears the session"""
     logout(request)
