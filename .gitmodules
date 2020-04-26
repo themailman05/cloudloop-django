@@ -1,0 +1,6 @@
+[submodule "cloudloop-ios"]
+	path = cloudloop-ios
+	url = https://github.com/themailman05/cloudloop-ios.git
+[submodule "cloudloop-flask"]
+	path = cloudloop-flask
+	url = https://github.com/themailman05/cloudloop-flask.git
