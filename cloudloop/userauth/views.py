@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
+import json
 
 from rest_framework import status
 
@@ -19,8 +20,11 @@ def auth_login(request):
     - Check for username and password
     - Return serialized user data
     """
-    username = request.POST['username']
-    password = request.POST['password']
+
+    data = json.loads(request.body)
+    username = data.username
+    password = data.password
+
     user = authenticate(username=username, password=password)
 
     if user:
